@@ -9,19 +9,42 @@ html {
 
 body {
     margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
+    background-color: #fff; /* Clean background */
     font-size: 1.2rem;
 }
 
+section {
+    padding: 20px;
+    background: #f0f0f0; /* Light grey background for sections */
+    border-radius: 8px; /* Rounded corners for modern look */
+}
+
+h1 {
+    font-size: 2.5rem; /* Larger font size for prominence */
+    font-weight: bold; /* Bold weight for visibility */
+    color: #00274C; /* Deep blue for a strong appearance */
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5); /* Text shadow for depth */
+    margin: 20px 0; /* Spacing for distinction */
+    padding: 10px; /* Padding for visual space */
+    background-color: #FFCB05; /* Background color to highlight the title */
+    border-radius: 10px; /* Rounded corners */
+    display: inline-block; /* Limits background to text width */
+}
+
+
 a {
-    color: #00274C;
+    color: #003366;
     text-decoration: none;
 }
 
 a:focus, a:hover {
-    text-decoration: underline;
+    color: #00274C;
+    background-color: #FFCB05;
+    text-decoration: none;
 }
 
 /* Skip to Main */
@@ -50,6 +73,9 @@ header {
     color: black;
     padding: 1rem 0.5rem;
     text-align: center;
+    width: 100%; /* Ensures header is full-width */
+    margin: 0; /* Removes any default margin */
+    box-sizing: border-box; /* Ensures padding does not affect width */
 }
 
 nav ul {
@@ -58,23 +84,29 @@ nav ul {
     display: flex;
     justify-content: space-around;
     margin: 0;
+    width: 100%;
 }
 
 nav a {
     display: block;
-    padding: 0.5rem;
+    padding: 0.625rem 0.937rem;
+    flex-grow: 1;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+    border-radius: 5px; /* Rounded corners for a modern look */
 }
 
 nav a.active, nav a:hover {
+    background: linear-gradient(145deg, #ffd700, #ffcb05);
+    color: black;
     font-weight: bold;
-    background-color: #f4f4f4;
+    border-bottom: 0.25rem solid black; /* Adds a bottom border for clear indication */
+    text-decoration: none; /* No underline on hover to keep it clean */
 }
 
 /* Main Content */
 main {
-    padding: 1rem;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adapts the number of columns based on the screen size */
     gap: 20px;
 }
 
@@ -91,4 +123,49 @@ footer {
     background-color: lightskyblue;
     color: black;
 }
+
+footer a {
+    color: black; 
+    text-decoration: underline; 
+}
+
+footer a:hover, footer a:focus {
+    color: #FFCB05;  
+    background-color: #000; 
+    text-decoration: none; 
+}
+
+@media (min-width: 1024px) { 
+    body {
+        font-size: 1.5rem; /* Increase base font size for desktop readability */
+    }
+
+    header {
+        width: 100%;
+        margin: 0 auto;
+        padding: 1rem 2rem; /* More padding in header */
+    }
+
+    nav ul {
+        justify-content: center; /* Align nav items to the left with more spacing */
+    }
+
+    nav a {
+        padding: 1rem 1.5rem; /* Larger padding for navigation links */
+        margin-right: 20px; /* Space between nav items */
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for main content */
+        gap: 40px; /* More space between grid items */
+    }
+
+    section {
+        padding: 40px; /* More padding within each section */
+        border-radius: 12px; /* Larger border radius for aesthetics */
+    }
+}
+
+
 
